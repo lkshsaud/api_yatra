@@ -11,7 +11,7 @@ if (isset($data['email']) && isset($data['password'])) {
     $email = $data['email'];
     $password = $data['password'];
 
-    // Check if user exists
+    
     $query = "SELECT * FROM users WHERE email = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $email);
@@ -20,7 +20,7 @@ if (isset($data['email']) && isset($data['password'])) {
     $user = $result->fetch_assoc();
 
     if ($user) {
-        // Verify hashed password
+        
         if (password_verify($password, $user['password'])) {
             echo json_encode(["success" => true, "message" => "Login successful!", "username" => $user['username']]);
         } else {

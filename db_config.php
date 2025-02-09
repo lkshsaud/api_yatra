@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root"; // Default XAMPP username
-$password = ""; // Default is empty
+$username = "root"; 
+$password = ""; 
 $dbname = "flutter";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
